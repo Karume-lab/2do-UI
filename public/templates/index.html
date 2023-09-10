@@ -58,9 +58,13 @@
 					</div>
 					<!-- Wrapper Top End -->
 
+					<div class="border border-black w-96">
+						<div id="progressBar" class=" bg-green-700 p-3"></div>
+					</div>
+
 					<!-- Task Details -->
-					<!-- <div class="mt-5 px-2">
-						<ul>
+					<div class="mt-5 px-2">
+						<ul id="taskDetails">
 							<li class="flex items-center justify-between">
 								<button id="task1">Tailwind CSS</button>
 								<div>
@@ -96,15 +100,15 @@
 									<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
 								</div>
 							</li>
-							<li class="flex items-center justify-between">
+							<li class="flex items-center justify-between line-through">
 								<button>Tailwind CSS</button>
 								<div>
-									<input type="checkbox" name="markTask" id="markTask">
+									<input type="checkbox" name="markTask" id="markTask" checked>
 									<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
 								</div>
 							</li>
 						</ul>
-					</div> -->
+					</div>
 					<!-- Task Details End -->
 
 				</div>
@@ -278,19 +282,48 @@
 
 
 		<!-- Add Task Modal -->
-		<div>
-			<form action="" class="flex flex-col w-fit">
+		<div id="addTaskModal" class="fixed inset-0 items-center justify-center z-10 hidden">
+			<div class="w-fit bg-gray-500 shadow-lg m-2 rounded-xl">
+			<div class="flex justify-between items-center px-3">
+				<span class="w-20 h-20"><img src="./../img/icons/new-task.png" alt=""></span>
+				<button data-target="addTaskModal" class="text-6xl">&times;</button>
+			</div>
+			<form action="" class="pb-2">
+				<div class="flex flex-col w-fit p-3 mb-2">
 				<label for="taskTitle">Title</label>
-				<input type="text" name="taskTitle" id="taskTitle">
+				<input type="text" name="taskTitle" id="taskTitle" class="rounded-lg">
 				<label for="taskDescription">Description</label>
-				<textarea name="taskDescription" id="taskDescription" cols="30" rows="10"></textarea>
-				<div class="flex">
-					<button type="submit" class="p-2 bg-green-700 hover:bg-green-600 rounded-lg">Add Task</button>
-					<button class="p-2 bg-red-700 hover:bg-red-600">Clear</button>
+				<textarea name="taskDescription" id="taskDescription" cols="30" rows="10" class="rounded-xl"></textarea>
+				</div>
+				<div class="flex justify-around">
+				<button class="p-2 rounded-lg bg-red-700 hover:bg-red-600">Clear</button>
+				<button type="submit" class="p-2 bg-green-700 hover:bg-green-600 rounded-lg">Add Task</button>
 				</div>
 			</form>
+			</div>
 		</div>
 		<!-- Add Task Modal End -->
+
+		<!-- Add Step Modal -->
+		<div id="addStepModal" class="fixed inset-0 items-center justify-center z-10 hidden">
+			<div class="w-fit bg-gray-500 shadow-lg m-2 rounded-xl">
+			<div class="flex justify-between items-center px-3">
+				<span class="w-20 h-20"><img src="./../img/icons/new-step.png" alt=""></span>
+				<button data-target="addStepModal" class="text-6xl">&times;</button>
+			</div>
+			<form action="" class="pb-2">
+				<div class="flex flex-col w-fit p-3 mb-2">
+				<label for="stepDescription">Description</label>
+				<textarea name="stepDescription" id="stepDescription" cols="30" rows="10" class="rounded-xl"></textarea>
+				</div>
+				<div class="flex justify-around">
+				<button class="p-2 rounded-lg bg-red-700 hover:bg-red-600">Clear</button>
+				<button type="submit" class="p-2 bg-green-700 hover:bg-green-600 rounded-lg">Add Step</button>
+				</div>
+			</form>
+			</div>
+		</div>
+		<!-- Add Step Modal End -->
 
 		<!-- Footer -->
 		<!-- <footer class="bg-green-500 absolute bottom-0 w-full p-1">
@@ -303,8 +336,10 @@
 		</footer> -->
 		<!-- Footer End -->
 
-		<!-- <script src="./../js/toggleSteps.js"></script>
-		<script src="./../js/toggleTasks.js"></script> -->
+		<script src="./../js/toggleSteps.js"></script>
+		<script src="./../js/toggleTasks.js"></script>
+		<script src="./../js/progressBar.js"></script>
 		<script src="./../js/toggleDropside.js"></script>
+		<script src="./../js/addTaskModalToggle.js"></script>
 	</body>
 </html>

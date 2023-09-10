@@ -10,7 +10,7 @@ task1.addEventListener("click", () => {
 	steps1.classList.remove("hidden");
 });
 
-task2.addEventListener("click", () =>{
+task2.addEventListener("click", () => {
 	clickTask.classList.add("hidden");
 	steps2.classList.remove("hidden");
 	steps1.classList.add("hidden");
