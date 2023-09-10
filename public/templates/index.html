@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./../css/master.css" rel="stylesheet">
+		<title>2DO | Home</title>
+	</head>
+	<body class="md:bg-center bg-no-repeat bg-cover" style="background-image: url(./../img/todo-bg.jpg)">
+
+		<!-- Page Wrapper -->
+		<div class="relative">
+			<h1 class="text-center py-2 underline text-xl md:text-6xl">2DO</h1>
+
+			<!-- Content Wrapper -->
+			<div class="p-4 mx-3 border border-black rounded-xl flex h-screen">
+
+				<!-- Task Toggler -->
+				<div id="taskToggler" class="hidden">
+					<button id="openTasks" class="text-6xl">=</button>
+					<button id="closeTasks" class="text-4xl hidden">X</button>
+				</div>
+				<!-- Task Toggler End -->
+
+				<!-- Task Wrapper -->
+				<div id="tasksWrapper" class="border border-black bg-black bg-opacity-25 rounded-xl p-2 md:w-5/12 flex flex-col">
+
+					<!-- Wrapper Top -->
+					<div class="flex items-center justify-between">
+
+						<!-- Wrapper Icon -->
+						<button>
+							<img src="./../img/icons/tasks.png" alt="" class="w-10 h-10 md:w-20	 md:h-20	">
+						</button>
+						<!-- Wrapper Icon End -->
+
+						<!-- Actions -->
+						<div class="flex items-center justify-center bg-lime-600 bg-opacity-40 rounded-r-full rounded-l-full">
+
+							<!-- Dropside Options -->
+							<div id="tasksDropsideOptions" class="p-1 hidden">
+								<button id="addTask" class="p-2"><img src="./../img/icons/add.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+								<div class="border border-black"></div>
+								<button><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+								<button><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+								<button><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+								<button><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							</div>
+							<!-- Dropside Options End -->
+
+							<div id="tasksDropsideToggler">
+								<button id="openTasksMenu" class="p-2"><img src="./../img/icons/dropside.png" alt="" class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
+								<button id="closeTasksMenu" class="p-2 hidden"><img src="./../img/icons/close.png" alt="" class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
+							</div>
+						</div>
+						<!-- Actions End -->
+
+					</div>
+					<!-- Wrapper Top End -->
+
+					<!-- Task Details -->
+					<!-- <div class="mt-5 px-2">
+						<ul>
+							<li class="flex items-center justify-between">
+								<button id="task1">Tailwind CSS</button>
+								<div>
+									<input type="checkbox" name="markTask" id="markTask">
+									<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+								</div>
+							</li>
+							<li class="flex items-center justify-between">
+								<button id="task2">Tailwind CSS</button>
+								<div>
+									<input type="checkbox" name="markTask" id="markTask">
+									<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+								</div>
+							</li>
+							<li class="flex items-center justify-between">
+								<button>Tailwind CSS</button>
+								<div>
+									<input type="checkbox" name="markTask" id="markTask">
+									<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+								</div>
+							</li>
+							<li class="flex items-center justify-between">
+								<button>Tailwind CSS</button>
+								<div>
+									<input type="checkbox" name="markTask" id="markTask">
+									<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+								</div>
+							</li>
+							<li class="flex items-center justify-between">
+								<button>Tailwind CSS</button>
+								<div>
+									<input type="checkbox" name="markTask" id="markTask">
+									<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+								</div>
+							</li>
+							<li class="flex items-center justify-between">
+								<button>Tailwind CSS</button>
+								<div>
+									<input type="checkbox" name="markTask" id="markTask">
+									<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+								</div>
+							</li>
+						</ul>
+					</div> -->
+					<!-- Task Details End -->
+
+				</div>
+				<!-- Task Wrapper End -->
+
+				<!-- Steps Wrapper -->
+				<div id="stepsWrapper" class="border border-black bg-black bg-opacity-25 rounded-xl p-2 md:w-7/12 ml-4 flex flex-col">
+
+					<!-- Wrapper Top -->
+					<div class="flex items-center justify-between">
+
+						<!-- Wrapper Icon -->
+						<button>
+							<img src="./../img/icons/steps.png" alt="" class="w-10 h-10 md:w-20	 md:h-20	">
+						</button>
+						<!-- Wrapper Icon End -->
+
+						<!-- Actions -->
+						<div class="flex items-center justify-center bg-lime-600 bg-opacity-40 rounded-r-full rounded-l-full">
+
+							<!-- Dropside Options -->
+							<div id="stepsDropsideOptions" class="p-1 hidden">
+								<button class="p-2"><img src="./../img/icons/add.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+								<div class="border border-black"></div>
+								<button><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+								<button><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+								<button><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+								<button><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							</div>
+							<!-- Dropside Options End -->
+
+							<div id="stepsDropsideToggler">
+								<button id="openStepsMenu" class="p-2"><img src="./../img/icons/dropside.png" alt="" class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
+								<button id="closeStepsMenu" class="p-2 hidden"><img src="./../img/icons/close.png" alt="" class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
+							</div>
+						</div>
+						<!-- Actions End -->
+
+					</div>
+					<!-- Wrapper Top End -->
+
+					<div>
+
+						<!-- No Task Clicked Info -->
+						<div id="clickTask" class="text-center md:text-4xl">
+							<h1>CLICK ON A TASK TO SHOW THE STEPS</h1>
+						</div>
+						<!-- No Task Clicked Info End -->
+
+						<!-- Steps Details -->
+						<div id="steps1" class="hidden">
+							<ul>
+								<li class="flex items-center justify-between">
+									<span>Learn it</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>Learn it</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>Learn it</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>Learn it</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>Learn it</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>Learn it</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>Learn it</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- Steps Details End -->
+
+						<!-- Steps Details -->
+						<div id="steps2" class="hidden">
+							<ul>
+								<li class="flex items-center justify-between">
+									<span>JUST DO IT</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>JUST DO IT</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>JUST DO IT</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>JUST DO IT</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>JUST DO IT</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>JUST DO IT</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+								<li class="flex items-center justify-between">
+									<span>JUST DO IT</span>
+									<div>
+										<input type="checkbox" name="markStep" id="markStep">
+										<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- Steps Details End -->
+
+					</div>
+				</div>
+				<!-- Steps Wrapper End -->
+
+			</div>
+			<!-- Content Wrapper End -->
+
+		</div>
+		<!-- Page Wrapper End -->
+
+
+		<!-- Add Task Modal -->
+		<div>
+			<form action="" class="flex flex-col w-fit">
+				<label for="taskTitle">Title</label>
+				<input type="text" name="taskTitle" id="taskTitle">
+				<label for="taskDescription">Description</label>
+				<textarea name="taskDescription" id="taskDescription" cols="30" rows="10"></textarea>
+				<div class="flex">
+					<button type="submit" class="p-2 bg-green-700 hover:bg-green-600 rounded-lg">Add Task</button>
+					<button class="p-2 bg-red-700 hover:bg-red-600">Clear</button>
+				</div>
+			</form>
+		</div>
+		<!-- Add Task Modal End -->
+
+		<!-- Footer -->
+		<!-- <footer class="bg-green-500 absolute bottom-0 w-full p-1">
+			<div class="text-center">
+				<span>2DO &copy 2023</span>
+			</div>
+			<div>
+				SOCIAL ICONS
+			</div>
+		</footer> -->
+		<!-- Footer End -->
+
+		<!-- <script src="./../js/toggleSteps.js"></script>
+		<script src="./../js/toggleTasks.js"></script> -->
+		<script src="./../js/toggleDropside.js"></script>
+	</body>
+</html>
