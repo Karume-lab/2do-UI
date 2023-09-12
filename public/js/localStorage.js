@@ -26,6 +26,6 @@ const storeStep = (description) => {
 		description: `${description}`,
 		checked: false,
 	}
-	console.log(task);
+	taskArray[task.id.replace("task", "")].steps.push(step);
 	localStorage.setItem("tasks", JSON.stringify(taskArray));
 }
