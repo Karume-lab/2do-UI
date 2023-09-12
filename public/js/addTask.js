@@ -1,13 +1,21 @@
 const tasksUl = document.querySelector("#tasksUl");
 
 const createTaskHTML = (task) => {
+	if (task.checked) {
+		var checked = "checked";
+		var line = "line-through"
+	} else {
+		checked = "";
+		line = "";
+	}
+
 	const taskHTML = `
 	<li class="flex items-center justify-between">
 		<input type="checkbox">
-		<button data-target="step${task.id}" id="task${task.id}">${task.title}</button>
+		<button data-target="steps${task.id}" id="task${task.id}" class="${line}">${task.title}</button>
 		<div>
-			<input type="checkbox" name="markTask" id="markTask${task.id}">
-			<button class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
+			<input type="checkbox" onchange="checkTask(${task.id})" id="markTask${task.id}" ${checked}>
+			<button onclick="deleteTask(${task.id})" id="deleteTask${task.id}" class="p-2 m-1 rounded-xl bg-red-600 hover:bg-red-500">Delete</button>
 		</div>
 	</li>
 	`
@@ -24,10 +32,10 @@ const displayTasksHTML = (taskArray) => {
 
 tasksUl.innerHTML = displayTasksHTML(taskArray);
 
-
 const addTask = () => {
 	const title = document.querySelector("#taskTitle").value;
 	const description = document.querySelector("#taskDescription").value;
 	storeTask(title, description);
 	displayTasksHTML(taskArray);
+	location.reload();
 }
