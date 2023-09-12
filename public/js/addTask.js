@@ -1,16 +1,19 @@
 const tasksUl = document.querySelector("#tasksUl");
 
 const createTaskHTML = (task) => {
+	let checked;
+	let line;
+
 	if (task.checked) {
-		var checked = "checked";
-		var line = "line-through"
+		checked = "checked";
+		line = "line-through"
 	} else {
 		checked = "";
 		line = "";
 	}
 
 	const taskHTML = `
-	<li class="flex items-center justify-between">
+	<li class="flex items-center justify-between p-2 rounded-xl bg-opacity-80">
 		<input type="checkbox">
 		<button data-target="steps${task.id}" id="task${task.id}" class="${line}">${task.title}</button>
 		<div>

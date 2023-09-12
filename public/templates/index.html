@@ -39,8 +39,8 @@
 							<div class="border border-black"></div>
 							<button><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
 							<button><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
-							<button><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
-							<button><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="deleteAllTasks()"><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="markAllTasks()"><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
 						</div>
 						<!-- Dropside Options End -->
 
@@ -89,13 +89,14 @@
 
 						<!-- Dropside Options -->
 						<div id="stepsDropsideOptions" class="p-1 hidden">
-							<button disabled id="addStepBtn" data-modal="addStepModal" class="p-2 cursor-not-allowed"><img
-									src="./../img/icons/add.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button disabled id="addStepBtn" data-modal="addStepModal" class="p-2 cursor-not-allowed">
+								<img src="./../img/icons/add.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
+							</button>
 							<div class="border border-black"></div>
 							<button><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
 							<button><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
-							<button><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
-							<button><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="deleteAllSteps()"><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="markAllSteps()"><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
 						</div>
 						<!-- Dropside Options End -->
 
@@ -143,9 +144,9 @@
 			<div class="pb-2">
 				<div class="flex flex-col w-fit p-3 mb-2">
 					<label for="taskTitle">Title</label>
-					<input type="text" name="taskTitle" id="taskTitle" class="rounded-lg">
+					<input type="text" name="taskTitle" id="taskTitle" class="rounded-lg p-3">
 					<label for="taskDescription">Description</label>
-					<textarea name="taskDescription" id="taskDescription" cols="30" rows="10" class="rounded-xl"></textarea>
+					<textarea name="taskDescription" id="taskDescription" cols="30" rows="10" class="rounded-xl p-4"></textarea>
 				</div>
 				<div class="flex justify-around">
 					<button class="p-2 rounded-lg bg-red-700 hover:bg-red-600">Clear</button>
@@ -166,7 +167,7 @@
 			<div action="" class="pb-2">
 				<div class="flex flex-col w-fit p-3 mb-2">
 					<label for="stepDescription">Description</label>
-					<textarea name="stepDescription" id="stepDescription" cols="30" rows="10" class="rounded-xl"></textarea>
+					<textarea name="stepDescription" id="stepDescription" cols="30" rows="10" class="rounded-xl p-4"></textarea>
 				</div>
 				<div class="flex justify-around">
 					<button class="p-2 rounded-lg bg-red-700 hover:bg-red-600">Clear</button>
@@ -189,14 +190,16 @@
 	<!-- Footer End -->
 
 	<script src="./../js/localStorage.js"></script>
-	<script src="./../js/addTask.js"></script>
 	<script src="./../js/main.js"></script>
+	<script src="./../js/addTask.js"></script>
+	<script src="./../js/toggleTasks.js"></script>
 	<script src="./../js/addStep.js"></script>
 	<script src="./../js/deleteTask.js"></script>
+	<script src="./../js/deleteStep.js"></script>
 	<script src="./../js/checkTask.js"></script>
 	<script src="./../js/toggleDropside.js"></script>
+	<script src="./../js/checkStep.js"></script>
 	<script src="./../js/addTaskModalToggle.js"></script>
-	<script src="./../js/toggleTasks.js"></script>
 
 	<!--
 		<script src="./../js/toggleSteps.js"></script>
