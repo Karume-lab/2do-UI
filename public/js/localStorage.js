@@ -1,10 +1,10 @@
 // localStorage.clear()
-// localStorage.setItem("tasks", JSON.stringify([{"id":0,"title":"sdfsdf","description":"sdfgdfg","checked":true,"steps":[{"description":"sdfadfg","checked":true},{"description":"sdfgf","checked":false},{"description":"sdfgf","checked":false}]},{"id":1,"title":"one","description":"one","checked":false,"steps":[]},{"id":2,"title":"two","description":"two","checked":false,"steps":[]},{"id":3,"title":"three","description":"three","checked":false,"steps":[]},{"id":4,"title":"five","description":"five","checked":false,"steps":[]}]));
 
 let taskArray = localStorage.getItem("tasks")
 ? JSON.parse(localStorage.getItem("tasks"))
 : [];
 let selectedTaskId = "";
+let selectedTaskIdArray = [];
 
 const storeTask = (title, description) => {
 	const id = taskArray.length;
@@ -13,6 +13,7 @@ const storeTask = (title, description) => {
 		title: `${title}`,
 		description: `${description}`,
 		checked: false,
+		is_selected: false,
 		steps: [],
 	};
 
@@ -58,3 +59,34 @@ const markAllSteps = () => {
 	localStorage.setItem("tasks", JSON.stringify(taskArray));
 	location.reload();
 }
+
+const deleteSelectedTasks = () => {
+	const newTaskArray = taskArray.slice(0, taskArray.length);
+	const selectedTaskIdArray = []
+
+	selectedTaskArray.forEach(sTask => {
+		taskArray.forEach((task, index) => {
+			if (sTask === task) {
+				selectedTaskIdArray.push(index);
+			}
+		});
+	});
+
+	taskArray.forEach(task => {
+		selectedTaskIdArray.forEach((sTask, index) => {
+			if (task === taskArray[sTask]) {
+				newTaskArray.splice(sTask - index, 1);
+			}
+			});
+	});
+
+	newTaskArray.forEach(task => {
+		console.log(task);
+	});
+
+	localStorage.setItem("tasks", JSON.stringify(newTaskArray));
+	location.reload();
+}
+
+const data1 = [{"id": 1, "title": "Task 1", "description": "Complete assignment", "checked": false, "is_selected": false, "steps": []}, {"id": 2, "title": "Task 2", "description": "Buy groceries", "checked": false, "is_selected": false, "steps": []}, {"id": 3, "title": "Task 3", "description": "Schedule dentist appointment", "checked": false, "is_selected": false, "steps": []}, {"id": 4, "title": "Task 4", "description": "Call mom", "checked": false, "is_selected": false, "steps": []}, {"id": 5, "title": "Task 5", "description": "Read a book", "checked": false, "is_selected": false, "steps": []}]
+// localStorage.setItem("tasks", JSON.stringify(data1));
