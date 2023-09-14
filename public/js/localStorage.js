@@ -5,6 +5,7 @@ let taskArray = localStorage.getItem("tasks")
 : [];
 let selectedTaskId = "";
 let selectedTaskIdArray = [];
+let selectedStepIndexArray = [];
 
 const storeTask = (title, description) => {
 	const id = taskArray.length;
@@ -26,6 +27,7 @@ const storeStep = (description) => {
 	const step = {
 		description: `${description}`,
 		checked: false,
+		is_selected: false,
 	}
 	taskArray[task.id.replace("task", "")].steps.push(step);
 	localStorage.setItem("tasks", JSON.stringify(taskArray));

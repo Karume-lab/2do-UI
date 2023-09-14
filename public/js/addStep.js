@@ -1,18 +1,22 @@
 const createStepHTML = (step, index) => {
-	let checked;
-	let line;
+	let checked = "";
+	let line = "";
+	let select = "";
+	let bg = "";
 
 	if (step.checked) {
 		checked = "checked";
 		line = "line-through";
-	} else {
-		checked = "";
-		line = "";
+	}
+
+	if (step.is_selected) {
+		select = "checked";
+		bg = "bg-blue-400";
 	}
 
 	const stepHTML = `
-		<li class="flex items-center justify-between">
-			<input type="checkbox">
+		<li class="flex items-center justify-between ${bg}">
+			<input type="checkbox" id="selectStep${index}" onclick="selectStep(${index}) ${select}">
 			<span class="${line} cursor-pointer">${step.description}</span>
 			<div>
 				<input type="checkbox" onchange="checkStep(${index})" id="markStep${index}" ${checked}>
@@ -35,7 +39,6 @@ const displayStepsHTML = (steps) => {
 	}
 	return displayHTML;
 }
-
 
 const addStep = () => {
 	const description = document.querySelector("#stepDescription").value;
