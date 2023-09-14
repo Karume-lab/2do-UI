@@ -27,7 +27,7 @@ const storeStep = (description) => {
 		checked: false,
 		is_selected: false,
 	}
-	taskArray[task.id.replace("task", "")].steps.push(step);
+	taskArray[task.id.replace("task", "") - 1].steps.push(step);
 	localStorage.setItem("tasks", JSON.stringify(taskArray));
 }
 
