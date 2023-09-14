@@ -45,14 +45,14 @@ const markAllTasks = () => {
 }
 
 const deleteAllSteps = () => {
-	const task = taskArray[selectedTaskId.replace("task", "")];
+	const task = taskArray[selectedTaskId.replace("task", "") - 1];
 	task.steps = [];
 	localStorage.setItem("tasks", JSON.stringify(taskArray));
 	location.reload();
 }
 
 const markAllSteps = () => {
-	const steps = taskArray[selectedTaskId.replace("task", "")].steps;
+	const steps = taskArray[selectedTaskId.replace("task", "") - 1].steps;
 	steps.forEach(step => {
 		step.checked = true;
 	});
