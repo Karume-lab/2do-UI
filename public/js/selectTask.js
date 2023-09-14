@@ -1,7 +1,7 @@
 const selectTask = (taskId) => {
 	const sTask = document.querySelector(`#selectTask${taskId}`);
 	const tId = sTask.id.replace("selectTask", "") - 1;
-	const task = taskArray[tId]
+	const task = taskArray[tId];
 
 	task.is_selected = sTask.checked;
 	
@@ -16,6 +16,7 @@ const selectTask = (taskId) => {
 		taskNoSpan.innerHTML = "";
 		taskNoSpan.classList.remove("p-2");
 	}
+
 
 	localStorage.setItem("tasks", JSON.stringify(taskArray));
 	location.reload();
