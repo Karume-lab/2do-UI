@@ -77,14 +77,29 @@ const deleteSelectedTasks = () => {
 			if (task === taskArray[sTask]) {
 				newTaskArray.splice(sTask - index, 1);
 			}
-			});
-	});
-
-	newTaskArray.forEach(task => {
-		console.log(task);
+		});
 	});
 
 	localStorage.setItem("tasks", JSON.stringify(newTaskArray));
+	location.reload();
+}
+
+const deleteSelectedSteps = () => {
+	const newStepArray = [];
+	const task = taskArray[selectedTaskId.replace("task", "") - 1];
+
+	task.steps.forEach(step => {
+		if (step.is_selected === false) {
+			newStepArray.push(step);
+		}
+	});
+
+	newStepArray.forEach(task => {
+		console.log(task);
+	});
+
+	task.steps = newStepArray;
+	localStorage.setItem("tasks", JSON.stringify(taskArray));
 	location.reload();
 }
 
