@@ -15,8 +15,8 @@ const createStepHTML = (step, index) => {
 	}
 
 	const stepHTML = `
-		<li class="flex items-center justify-between ${bg}">
-			<input type="checkbox" id="selectStep${index}" onclick="selectStep(${index}) ${select}">
+		<li class="flex items-center justify-between p-2 m-2 rounded-xl bg-opacity-80 ${bg}">
+			<input type="checkbox" id="selectStep${index}" onclick="selectStep(${index})" ${select}>
 			<span class="${line} cursor-pointer">${step.description}</span>
 			<div>
 				<input type="checkbox" onchange="checkStep(${index})" id="markStep${index}" ${checked}>
@@ -24,7 +24,7 @@ const createStepHTML = (step, index) => {
 			</div>
 		</li>
 		`;
-		return stepHTML;
+	return stepHTML;
 }
 
 const displayStepsHTML = (steps) => {
