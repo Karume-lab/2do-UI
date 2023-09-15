@@ -8,22 +8,12 @@ tasks.forEach(task => {
 		tasks.forEach(task => {
 			task.parentElement.classList.remove("bg-green-400");
 		});
-		
+
 		let taskLi = task.parentElement;
-		let taskId = task.id.replace("task", "");
-		let tskId = 0;
-
 		taskLi.classList.add("bg-green-400");
-		stepsUl.id = `steps${taskId}`;
 
-		taskArray.forEach((task, index) => {
-			if (task.id === Number(taskId)) {
-				tskId  = index;
-			}
-		});
-
-		stepsUl.innerHTML = displayStepsHTML(taskArray[tskId].steps);
 		selectedTaskId = taskLi.children[1].id;
+		stepsUl.innerHTML = displayStepsHTML(taskArray[selectedTaskId.replace("task", "") - 1].steps);
 		clickTask.classList.add("hidden");
 		addStepBtn.classList.remove("cursor-not-allowed");
 		addStepBtn.disabled = false;
