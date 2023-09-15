@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./../css/master.css" rel="stylesheet">
+	<link rel="shortcut icon" href="./../img/icons/favicon.png" type="image/x-icon">
+	<title>2DO | Home</title>
+</head>
+
+<body class="md:bg-center bg-no-repeat bg-cover" style="background-image: url(./../img/todo-bg.jpg)">
+
+	<!-- Page Wrapper -->
+	<div class="relative">
+		<h1 class="text-center py-2 underline text-xl md:text-6xl">2DO</h1>
+
+		<!-- Content Wrapper -->
+		<div class="p-4 mx-3 border border-black rounded-xl flex h-screen">
+
+			<!-- Task Wrapper -->
+			<div id="tasksWrapper" class="border border-black bg-black bg-opacity-25 rounded-xl p-2 md:w-5/12 flex flex-col">
+
+				<!-- Wrapper Top -->
+				<div class="flex items-center justify-between">
+
+					<!-- Wrapper Icon -->
+					<button>
+						<img src="./../img/icons/tasks.png" alt="" class="w-10 h-10 md:w-20	 md:h-20	">
+					</button>
+					<!-- Wrapper Icon End -->
+
+					<!-- Actions -->
+					<div class="flex items-center justify-center bg-lime-600 bg-opacity-40 rounded-r-full rounded-l-full">
+
+						<!-- Dropside Options -->
+						<div id="tasksDropsideOptions" class="p-1 hidden">
+							<button id="addTask" data-modal="addTaskModal" class="p-2"><img src="./../img/icons/add.png" alt=""
+									class="w-10 h-10 md:w-20 md:h-20"></button>
+							<div class="border border-black m-3"></div>
+
+							<div>
+								<div>
+									<span id="selectedTasksNo" class="rounded-full bg-white bg-opacity-80 shadow-xl"></span>
+								</div>
+								<div class="flex bg-black bg-opacity-80 rounded-xl p-2">
+									<button onclick="deleteSelectedTasks()">
+										<img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
+									</button>
+									<button onclick="markSelectedTasks()">
+										<img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
+									</button>
+								</div>
+							</div>
+
+							<button onclick="deleteAllTasks()"><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="markAllTasks()"><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+						</div>
+						<!-- Dropside Options End -->
+
+						<div id="tasksDropsideToggler">
+							<button id="openTasksMenu" class="p-2"><img src="./../img/icons/dropside.png" alt=""
+									class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
+							<button id="closeTasksMenu" class="p-2 hidden"><img src="./../img/icons/close.png" alt=""
+									class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
+						</div>
+					</div>
+					<!-- Actions End -->
+
+				</div>
+				<!-- Wrapper Top End -->
+
+				<!-- Progress Bar -->
+				<div class="border border-black w-96">
+					<div id="progressBar" class="p-3 bg-red-600"></div>
+				</div>
+				<!-- Progress Bar End -->
+
+				<!-- Task Details -->
+				<div class="mt-5 px-2">
+					<ul id="tasksUl"></ul>
+				</div>
+				<!-- Task Details End -->
+
+			</div>
+			<!-- Task Wrapper End -->
+
+			<!-- Steps Wrapper -->
+			<div id="stepsWrapper"
+				class="border border-black bg-black bg-opacity-25 rounded-xl p-2 md:w-7/12 ml-4 flex flex-col">
+
+				<!-- Wrapper Top -->
+				<div class="flex items-center justify-between">
+
+					<!-- Wrapper Icon -->
+					<button>
+						<img src="./../img/icons/steps.png" alt="" class="w-10 h-10 md:w-20	 md:h-20">
+					</button>
+					<!-- Wrapper Icon End -->
+
+					<!-- Actions -->
+					<div class="flex items-center justify-center bg-lime-600 bg-opacity-40 rounded-r-full rounded-l-full">
+
+						<!-- Dropside Options -->
+						<div id="stepsDropsideOptions" class="p-1 hidden">
+							<button disabled id="addStepBtn" data-modal="addStepModal" class="p-2 cursor-not-allowed">
+								<img src="./../img/icons/add.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
+							</button>
+							<div class="border border-black"></div>
+							<button onclick="deleteSelectedSteps()"><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="markSelectedSteps()"><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="deleteAllSteps()"><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="markAllSteps()"><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+						</div>
+						<!-- Dropside Options End -->
+
+						<div id="stepsDropsideToggler">
+							<button id="openStepsMenu" class="p-2"><img src="./../img/icons/dropside.png" alt=""
+									class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
+							<button id="closeStepsMenu" class="p-2 hidden"><img src="./../img/icons/close.png" alt=""
+									class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
+						</div>
+					</div>
+					<!-- Actions End -->
+
+				</div>
+				<!-- Wrapper Top End -->
+
+				<div>
+
+					<!-- No Task Clicked Info -->
+					<div id="clickTask" class="text-center md:text-4xl">
+						<h1>CLICK ON A TASK TO SHOW THE STEPS</h1>
+					</div>
+					<!-- No Task Clicked Info End -->
+
+					<!-- Steps Details -->
+					<div id="stepsDiv">
+						<ul id="stepsUl"></ul>
+					</div>
+					<!-- Steps Details End -->
+
+				</div>
+			</div>
+			<!-- Steps Wrapper End -->
+
+		</div>
+		<!-- Content Wrapper End -->
+
+	</div>
+	<!-- Page Wrapper End -->
+
+	<!-- Add Task Modal -->
+	<div id="addTaskModal" class="fixed inset-0 items-center justify-center z-10 hidden">
+		<div class="w-fit bg-gray-500 shadow-lg m-2 rounded-xl">
+			<div class="flex justify-between items-center px-3">
+				<span class="w-20 h-20"><img src="./../img/icons/new-task.png" alt=""></span>
+				<button data-modal="addTaskModal" class="text-6xl">&times;</button>
+			</div>
+			<div class="pb-2">
+				<div class="flex flex-col w-fit p-3 mb-2">
+					<label for="taskTitle">Title</label>
+					<input type="text" name="taskTitle" id="taskTitle" class="rounded-lg p-3">
+					<label for="taskDescription">Description</label>
+					<textarea name="taskDescription" id="taskDescription" cols="30" rows="10" class="rounded-xl p-4"></textarea>
+				</div>
+				<div class="flex justify-around">
+					<button class="p-2 rounded-lg bg-red-700 hover:bg-red-600">Clear</button>
+					<button onclick="addTask()" class="p-2 bg-green-700 hover:bg-green-600 rounded-lg">Add Task</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Add Task Modal End -->
+
+	<!-- Add Step Modal -->
+	<div id="addStepModal" class="fixed inset-0 items-center justify-center z-10 hidden">
+		<div class="w-fit bg-gray-500 shadow-lg m-2 rounded-xl">
+			<div class="flex justify-between items-center px-3">
+				<span class="w-20 h-20"><img src="./../img/icons/new-step.png" alt=""></span>
+				<button data-modal="addStepModal" class="text-6xl">&times;</button>
+			</div>
+			<div action="" class="pb-2">
+				<div class="flex flex-col w-fit p-3 mb-2">
+					<label for="stepDescription">Description</label>
+					<textarea name="stepDescription" id="stepDescription" cols="30" rows="10" class="rounded-xl p-4"></textarea>
+				</div>
+				<div class="flex justify-around">
+					<button class="p-2 rounded-lg bg-red-700 hover:bg-red-600">Clear</button>
+					<button onclick="addStep()" class="p-2 bg-green-700 hover:bg-green-600 rounded-lg">Add Step</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Add Step Modal End -->
+
+	<!-- Footer -->
+	<!-- <footer class="bg-green-500 absolute bottom-0 w-full p-1">
+			<div class="text-center">
+				<span>2DO &copy 2023</span>
+			</div>
+			<div>
+				SOCIAL ICONS
+			</div>
+		</footer> -->
+	<!-- Footer End -->
+
+	<script src="./../js/main.js"></script>
+	<script src="./../js/localStorage.js"></script>
+	<script src="./../js/selectTask.js"></script>
+	<script src="./../js/selectStep.js"></script>
+	<script src="./../js/addTask.js"></script>
+	<script src="./../js/toggleTasks.js"></script>
+	<script src="./../js/addStep.js"></script>
+	<script src="./../js/deleteTask.js"></script>
+	<script src="./../js/deleteStep.js"></script>
+	<script src="./../js/toggleDropside.js"></script>
+	<script src="./../js/checkTask.js"></script>
+	<script src="./../js/checkStep.js"></script>
+	<script src="./../js/markSelectedTasks.js"></script>
+	<script src="./../js/markSelectedSteps.js"></script>
+	<script src="./../js/addTaskModalToggle.js"></script>
+
+	<!--
+		<script src="./../js/toggleSteps.js"></script>
+		<script src="./../js/progressBar.js"></script> 
+	-->
+</body>
+
+</html>
