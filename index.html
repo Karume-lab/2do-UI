@@ -4,7 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="public/css/master.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="public/css/master.css"> -->
+	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="shortcut icon" href="public/img/icons/favicon.png" type="image/x-icon">
 	<title>2DO | Home</title>
 </head>
@@ -33,17 +34,19 @@
 					<!-- Actions -->
 					<div class="flex items-center justify-center bg-lime-600 bg-opacity-40 rounded-r-full rounded-l-full">
 
-						<!-- Dropside Options -->
+						<!-- Tasks Dropside Options -->
 						<div id="tasksDropsideOptions" class="p-1 hidden">
-							<button id="addTask" data-modal="addTaskModal" class="p-2"><img src="public/img/icons/add.png" alt=""
-									class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button id="addTask" data-modal="addTaskModal" class="p-2">
+								<img src="public/img/icons/add.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
+							</button>
+
 							<div class="border border-black m-3"></div>
 
 							<div>
-								<div>
-									<span id="selectedTasksNo" class="rounded-full bg-white bg-opacity-80 shadow-xl"></span>
-								</div>
-								<div class="flex bg-black bg-opacity-80 rounded-xl p-2">
+								<div class="flex bg-black bg-opacity-80 rounded-xl p-2 relative">
+									<div class="absolute right-0 mx-2">
+										<span id="selectedTasksNo" class="rounded-full bg-white bg-opacity-80 shadow-xl"></span>
+									</div>
 									<button onclick="deleteSelectedTasks()">
 										<img src="public/img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
 									</button>
@@ -59,10 +62,12 @@
 						<!-- Dropside Options End -->
 
 						<div id="tasksDropsideToggler">
-							<button id="openTasksMenu" class="p-2"><img src="public/img/icons/dropside.png" alt=""
-									class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
-							<button id="closeTasksMenu" class="p-2 hidden"><img src="public/img/icons/close.png" alt=""
-									class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
+							<button id="openTasksMenu" class="p-2">
+								<img src="public/img/icons/dropside.png" alt="" class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20">
+							</button>
+							<button id="closeTasksMenu" class="p-2 hidden">
+								<img src="public/img/icons/close.png" alt="" class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20">
+							</button>
 						</div>
 					</div>
 					<!-- Actions End -->
@@ -101,14 +106,30 @@
 					<!-- Actions -->
 					<div class="flex items-center justify-center bg-lime-600 bg-opacity-40 rounded-r-full rounded-l-full">
 
-						<!-- Dropside Options -->
+
+
+						
+						<!-- Steps Dropside Options -->
 						<div id="stepsDropsideOptions" class="p-1 hidden">
 							<button disabled id="addStepBtn" data-modal="addStepModal" class="p-2 cursor-not-allowed">
 								<img src="public/img/icons/add.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
 							</button>
-							<div class="border border-black"></div>
-							<button onclick="deleteSelectedSteps()"><img src="public/img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
-							<button onclick="markSelectedSteps()"><img src="public/img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+
+							<div class="border border-black m-3"></div>
+
+							<div>
+								<div class="flex bg-black bg-opacity-80 rounded-xl p-2 relative">
+									<div class="absolute right-0 mx-2">
+										<span id="selectedStepsNo" class="rounded-full bg-white bg-opacity-80 shadow-xl"></span>
+									</div>
+									<button onclick="deleteSelectedSteps()">
+										<img src="public/img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
+									</button>
+									<button onclick="markSelectedSteps()">
+										<img src="public/img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
+									</button>
+								</div>
+							</div>
 							<button onclick="deleteAllSteps()"><img src="public/img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
 							<button onclick="markAllSteps()"><img src="public/img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
 						</div>
@@ -194,19 +215,8 @@
 	</div>
 	<!-- Add Step Modal End -->
 
-	<!-- Footer -->
-	<!-- <footer class="bg-green-500 absolute bottom-0 w-full p-1">
-			<div class="text-center">
-				<span>2DO &copy 2023</span>
-			</div>
-			<div>
-				SOCIAL ICONS
-			</div>
-		</footer> -->
-	<!-- Footer End -->
-
-	<script src="public/js/main.js"></script>
 	<script src="public/js/localStorage.js"></script>
+	<script src="public/js/main.js"></script>
 	<script src="public/js/selectTask.js"></script>
 	<script src="public/js/selectStep.js"></script>
 	<script src="public/js/addTask.js"></script>

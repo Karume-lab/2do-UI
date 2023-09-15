@@ -3,7 +3,6 @@ let taskArray = localStorage.getItem("tasks")
 : [];
 let selectedTaskId = "";
 let selectedTaskIdArray = [];
-let selectedStepIndexArray = [];
 
 const storeTask = (title, description) => {
 	const id = taskArray.length;
