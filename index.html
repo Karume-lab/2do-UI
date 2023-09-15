@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="./../css/master.css" rel="stylesheet">
+	<link href="./public/css/master.css" rel="stylesheet">
 	<link rel="shortcut icon" href="./../img/icons/favicon.png" type="image/x-icon">
 	<title>2DO | Home</title>
 </head>
@@ -26,7 +26,7 @@
 
 					<!-- Wrapper Icon -->
 					<button>
-						<img src="./../img/icons/tasks.png" alt="" class="w-10 h-10 md:w-20	 md:h-20	">
+						<img src="./public/img/icons/tasks.png" alt="" class="w-10 h-10 md:w-20	 md:h-20	">
 					</button>
 					<!-- Wrapper Icon End -->
 
@@ -35,7 +35,7 @@
 
 						<!-- Dropside Options -->
 						<div id="tasksDropsideOptions" class="p-1 hidden">
-							<button id="addTask" data-modal="addTaskModal" class="p-2"><img src="./../img/icons/add.png" alt=""
+							<button id="addTask" data-modal="addTaskModal" class="p-2"><img src="./public/img/icons/add.png" alt=""
 									class="w-10 h-10 md:w-20 md:h-20"></button>
 							<div class="border border-black m-3"></div>
 
@@ -45,23 +45,23 @@
 								</div>
 								<div class="flex bg-black bg-opacity-80 rounded-xl p-2">
 									<button onclick="deleteSelectedTasks()">
-										<img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
+										<img src="./public/img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
 									</button>
 									<button onclick="markSelectedTasks()">
-										<img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
+										<img src="./public/img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
 									</button>
 								</div>
 							</div>
 
-							<button onclick="deleteAllTasks()"><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
-							<button onclick="markAllTasks()"><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="deleteAllTasks()"><img src="./public/img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="markAllTasks()"><img src="./public/img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
 						</div>
 						<!-- Dropside Options End -->
 
 						<div id="tasksDropsideToggler">
-							<button id="openTasksMenu" class="p-2"><img src="./../img/icons/dropside.png" alt=""
+							<button id="openTasksMenu" class="p-2"><img src="./public/img/icons/dropside.png" alt=""
 									class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
-							<button id="closeTasksMenu" class="p-2 hidden"><img src="./../img/icons/close.png" alt=""
+							<button id="closeTasksMenu" class="p-2 hidden"><img src="./public/img/icons/close.png" alt=""
 									class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
 						</div>
 					</div>
@@ -94,7 +94,7 @@
 
 					<!-- Wrapper Icon -->
 					<button>
-						<img src="./../img/icons/steps.png" alt="" class="w-10 h-10 md:w-20	 md:h-20">
+						<img src="./public/img/icons/steps.png" alt="" class="w-10 h-10 md:w-20	 md:h-20">
 					</button>
 					<!-- Wrapper Icon End -->
 
@@ -104,20 +104,20 @@
 						<!-- Dropside Options -->
 						<div id="stepsDropsideOptions" class="p-1 hidden">
 							<button disabled id="addStepBtn" data-modal="addStepModal" class="p-2 cursor-not-allowed">
-								<img src="./../img/icons/add.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
+								<img src="./public/img/icons/add.png" alt="" class="w-10 h-10 md:w-20 md:h-20">
 							</button>
 							<div class="border border-black"></div>
-							<button onclick="deleteSelectedSteps()"><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
-							<button onclick="markSelectedSteps()"><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
-							<button onclick="deleteAllSteps()"><img src="./../img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
-							<button onclick="markAllSteps()"><img src="./../img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="deleteSelectedSteps()"><img src="./public/img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="markSelectedSteps()"><img src="./public/img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="deleteAllSteps()"><img src="./public/img/icons/delete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
+							<button onclick="markAllSteps()"><img src="./public/img/icons/complete.png" alt="" class="w-10 h-10 md:w-20 md:h-20"></button>
 						</div>
 						<!-- Dropside Options End -->
 
 						<div id="stepsDropsideToggler">
-							<button id="openStepsMenu" class="p-2"><img src="./../img/icons/dropside.png" alt=""
+							<button id="openStepsMenu" class="p-2"><img src="./public/img/icons/dropside.png" alt=""
 									class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
-							<button id="closeStepsMenu" class="p-2 hidden"><img src="./../img/icons/close.png" alt=""
+							<button id="closeStepsMenu" class="p-2 hidden"><img src="./public/img/icons/close.png" alt=""
 									class="bg-white rounded-full w-10 h-10 md:w-20 md:h-20"></button>
 						</div>
 					</div>
@@ -154,7 +154,7 @@
 	<div id="addTaskModal" class="fixed inset-0 items-center justify-center z-10 hidden">
 		<div class="w-fit bg-gray-500 shadow-lg m-2 rounded-xl">
 			<div class="flex justify-between items-center px-3">
-				<span class="w-20 h-20"><img src="./../img/icons/new-task.png" alt=""></span>
+				<span class="w-20 h-20"><img src="./public/img/icons/new-task.png" alt=""></span>
 				<button data-modal="addTaskModal" class="text-6xl">&times;</button>
 			</div>
 			<div class="pb-2">
@@ -177,7 +177,7 @@
 	<div id="addStepModal" class="fixed inset-0 items-center justify-center z-10 hidden">
 		<div class="w-fit bg-gray-500 shadow-lg m-2 rounded-xl">
 			<div class="flex justify-between items-center px-3">
-				<span class="w-20 h-20"><img src="./../img/icons/new-step.png" alt=""></span>
+				<span class="w-20 h-20"><img src="./public/img/icons/new-step.png" alt=""></span>
 				<button data-modal="addStepModal" class="text-6xl">&times;</button>
 			</div>
 			<div action="" class="pb-2">
@@ -205,25 +205,25 @@
 		</footer> -->
 	<!-- Footer End -->
 
-	<script src="./../js/main.js"></script>
-	<script src="./../js/localStorage.js"></script>
-	<script src="./../js/selectTask.js"></script>
-	<script src="./../js/selectStep.js"></script>
-	<script src="./../js/addTask.js"></script>
-	<script src="./../js/toggleTasks.js"></script>
-	<script src="./../js/addStep.js"></script>
-	<script src="./../js/deleteTask.js"></script>
-	<script src="./../js/deleteStep.js"></script>
-	<script src="./../js/toggleDropside.js"></script>
-	<script src="./../js/checkTask.js"></script>
-	<script src="./../js/checkStep.js"></script>
-	<script src="./../js/markSelectedTasks.js"></script>
-	<script src="./../js/markSelectedSteps.js"></script>
-	<script src="./../js/addTaskModalToggle.js"></script>
+	<script src="./public/js/main.js"></script>
+	<script src="./public/js/localStorage.js"></script>
+	<script src="./public/js/selectTask.js"></script>
+	<script src="./public/js/selectStep.js"></script>
+	<script src="./public/js/addTask.js"></script>
+	<script src="./public/js/toggleTasks.js"></script>
+	<script src="./public/js/addStep.js"></script>
+	<script src="./public/js/deleteTask.js"></script>
+	<script src="./public/js/deleteStep.js"></script>
+	<script src="./public/js/toggleDropside.js"></script>
+	<script src="./public/js/checkTask.js"></script>
+	<script src="./public/js/checkStep.js"></script>
+	<script src="./public/js/markSelectedTasks.js"></script>
+	<script src="./public/js/markSelectedSteps.js"></script>
+	<script src="./public/js/addTaskModalToggle.js"></script>
 
 	<!--
-		<script src="./../js/toggleSteps.js"></script>
-		<script src="./../js/progressBar.js"></script> 
+		<script src="./public/js/toggleSteps.js"></script>
+		<script src="./public/js/progressBar.js"></script> 
 	-->
 </body>
 
