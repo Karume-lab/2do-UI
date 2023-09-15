@@ -1,5 +1,5 @@
 const markSelectedSteps = () => {
-	const task = taskArray[selectedTaskId.replace("task", "") - 1];
+	const task = taskArray[selectedTaskId.replace("task", "")];
 	const selectedStepsIdArray = [];
 
 	taskArray.forEach(task => {

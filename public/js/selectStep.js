@@ -1,6 +1,6 @@
 const selectStep = (stepIndex) => {
 	const StepB = document.querySelector(`#selectStep${stepIndex}`);
-	const sTask = taskArray[selectedTaskId.replace("task", "") - 1];
+	const sTask = taskArray[selectedTaskId.replace("task", "")];
 	const step = sTask.steps[stepIndex];
 	step.is_selected = StepB.checked;
 

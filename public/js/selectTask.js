@@ -1,6 +1,6 @@
 const selectTask = (taskId) => {
 	const sTask = document.querySelector(`#selectTask${taskId}`);
-	const tId = sTask.id.replace("selectTask", "") - 1;
+	const tId = sTask.id.replace("selectTask", "");
 	const task = taskArray[tId];
 
 	task.is_selected = sTask.checked;
