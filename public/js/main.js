@@ -18,4 +18,7 @@ window.addEventListener("load", () => {
 		taskNoSpan.innerHTML = "";
 		taskNoSpan.classList.remove("p-2");
 	}
+
+	
+
 });

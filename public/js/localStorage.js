@@ -93,15 +93,11 @@ const deleteSelectedSteps = () => {
 			newStepArray.push(step);
 		}
 	});
-
-	newStepArray.forEach(task => {
-		console.log(task);
-	});
-
 	task.steps = newStepArray;
+
 	localStorage.setItem("tasks", JSON.stringify(taskArray));
 	location.reload();
 }
 
-const data1 = [{"id":1,"title":"Task 1","description":"Complete assignment","checked":false,"is_selected":false,"steps":[]},{"id":2,"title":"Task 2","description":"Buy groceries","checked":false,"is_selected":false,"steps":[{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false}]},{"id":3,"title":"Task 3","description":"Schedule dentist appointment","checked":false,"is_selected":false,"steps":[]},{"id":4,"title":"Task 4","description":"Call mom","checked":false,"is_selected":false,"steps":[]},{"id":5,"title":"Task 5","description":"Read a book","checked":false,"is_selected":false,"steps":[]}, {"id":1,"title":"Task 1","description":"Complete assignment","checked":false,"is_selected":false,"steps":[]},{"id":2,"title":"Task 2","description":"Buy groceries","checked":false,"is_selected":false,"steps":[{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false}]},{"id":3,"title":"Task 3","description":"Schedule dentist appointment","checked":false,"is_selected":false,"steps":[]},{"id":4,"title":"Task 4","description":"Call mom","checked":false,"is_selected":false,"steps":[]},{"id":5,"title":"Task 5","description":"Read a book","checked":false,"is_selected":false,"steps":[]}];
-localStorage.setItem("tasks", JSON.stringify(data1));
+const data1 = [{"id":1,"title":"Task 1","description":"Complete assignment","checked":false,"is_selected":false,"steps":[]},{"id":2,"title":"Task 2","description":"Buy groceries","checked":false,"is_selected":false,"steps":[{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false}]},{"id":3,"title":"Task 3","description":"Schedule dentist appointment","checked":false,"is_selected":false,"steps":[]},{"id":4,"title":"Task 4","description":"Call mom","checked":false,"is_selected":false,"steps":[]},{"id":5,"title":"Task 5","description":"Read a book","checked":false,"is_selected":false,"steps":[]},{"id":6,"title":"Task 6","description":"Complete assignment","checked":false,"is_selected":false,"steps":[]},{"id":7,"title":"Task 7","description":"Buy groceries","checked":false,"is_selected":false,"steps":[{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false},{"description":"sdfsd","checked":false}]},{"id":8,"title":"Task 8","description":"Schedule dentist appointment","checked":false,"is_selected":false,"steps":[]},{"id":9,"title":"Task 9","description":"Call mom","checked":false,"is_selected":false,"steps":[]},{"id":10,"title":"Task 10","description":"Read a book","checked":false,"is_selected":false,"steps":[]}];
+// localStorage.setItem("tasks", JSON.stringify(data1));
