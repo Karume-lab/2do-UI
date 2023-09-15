@@ -16,13 +16,13 @@ tasks.forEach(task => {
 		selectedTaskId = taskLi.children[1].id;
 		
 		let selectedSteps = 0;
-		taskArray[selectedTaskId.replace("task", "") - 1].steps.forEach(step => {
+		taskArray[selectedTaskId.replace("task", "")].steps.forEach(step => {
 			if (step.is_selected) {
 				selectedSteps += 1;
 			}
 		});
 
-		stepsUl.innerHTML = displayStepsHTML(taskArray[selectedTaskId.replace("task", "") - 1].steps);
+		stepsUl.innerHTML = displayStepsHTML(taskArray[selectedTaskId.replace("task", "")].steps);
 		clickTask.classList.add("hidden");
 		addStepBtn.classList.remove("cursor-not-allowed");
 		addStepBtn.disabled = false;

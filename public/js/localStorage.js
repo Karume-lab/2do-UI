@@ -26,7 +26,7 @@ const storeStep = (description) => {
 		checked: false,
 		is_selected: false,
 	}
-	taskArray[task.id.replace("task", "") - 1].steps.push(step);
+	taskArray[task.id.replace("task", "")].steps.push(step);
 	localStorage.setItem("tasks", JSON.stringify(taskArray));
 }
 
@@ -44,14 +44,14 @@ const markAllTasks = () => {
 }
 
 const deleteAllSteps = () => {
-	const task = taskArray[selectedTaskId.replace("task", "") - 1];
+	const task = taskArray[selectedTaskId.replace("task", "")];
 	task.steps = [];
 	localStorage.setItem("tasks", JSON.stringify(taskArray));
 	location.reload();
 }
 
 const markAllSteps = () => {
-	const steps = taskArray[selectedTaskId.replace("task", "") - 1].steps;
+	const steps = taskArray[selectedTaskId.replace("task", "")].steps;
 	steps.forEach(step => {
 		step.checked = true;
 	});
@@ -85,7 +85,7 @@ const deleteSelectedTasks = () => {
 
 const deleteSelectedSteps = () => {
 	const newStepArray = [];
-	const task = taskArray[selectedTaskId.replace("task", "") - 1];
+	const task = taskArray[selectedTaskId.replace("task", "")];
 
 	task.steps.forEach(step => {
 		if (step.is_selected === false) {
